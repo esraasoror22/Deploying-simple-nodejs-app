@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment
+  labels:
+    tier: web
+
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: front-end
+  template:
+    metadata:
+      name: podf
+      labels:
+        app: front-end
+    spec:
+      containers:
+        - name: vf
+          image: esraaelhasanen/k8s-web-app
+
